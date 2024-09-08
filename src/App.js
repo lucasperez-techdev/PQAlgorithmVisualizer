@@ -1,9 +1,11 @@
 import './App.css';
+import React from 'react';
+import Home from './Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>This is the start of my forked butthole</h1>
+      <Home/>
     </div>
   );
 }
