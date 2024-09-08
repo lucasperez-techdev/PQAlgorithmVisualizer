@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.home-wrapper {
+    height: 200vh; /* Make wrapper as tall as both screens */
+    overflow: hidden;
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #8400ff, #00ffe7, #e500ff, #ff0000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #000000;
+    font: bold 40px/1.5 "IMPACT", sans-serif;
+    text-align: center;
+    transition: transform 1s ease;
+    position: relative; /* Position relative to the home-wrapper */
+}
+
+.home-header {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    outline: none;
+    line-height: 1.0;
+    animation: fadeIn 5s ease-out, slideInTop 2s ease-out;
+}
+
+.home-header::after {
+    content: '';
+    position: relative;
+    bottom: 3px;
+    left: 0%;
+    transform: translateX(-50%) scaleX(3) scaleY(1);
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 20px solid #000000;
+    opacity: 0.8;
+}
+
+.slide-down {
+    transform: translateY(-100vh); /* Slides the first screen up */
+}
+
+.second-screen {
+    display: flex;
+    height: 100vh;
+    background: #ffffff;
+    color: #000;
+    flex-direction: row; /* Set the direction to row to place elements side by side */
+    justify-content: space-between; /* Space elements to the left and right */
+    align-items: flex-start; /* Align elements to the top */
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    transition: transform 1s ease;
+    padding: 20px; /* Add padding for some spacing */
+}
+
+.second-screen.show {
+    transform: translateY(-100vh); /* Move second screen up as first screen moves */
+}
+
+.second-screen h2 {
+    margin: 0;
+    animation: slideInTop 2s ease-out;
+}
+
+.second-screen h2:first-of-type {
+    align-self: flex-start;
+    position: relative;
+    left: 0; /* Position "P & Q" on the top left */
+}
+
+.second-screen h2:last-of-type {
+    align-self: flex-start;
+    position: relative;
+    right: 0; /* Position "ALGORITHM VISUALIZER" on the top right */
+    text-align: right; /* Align text to the right */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-200%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
