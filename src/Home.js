@@ -7,21 +7,21 @@ function Home() {
 
     function handleHeaderClick() {
         setSlideDown(true);
-    }
-
-    let className = 'home-container';
-    if (slideDown) {
-        className += ' slide-down';
+        // Smoothly scrolls to the next section (MenuScreen)
+        window.scrollTo({
+            top: window.innerHeight, // Scroll to the height of the viewport
+            behavior: 'smooth'
+        });
     }
 
     return (
         <div className="home-wrapper">
-            <div className={className}>
+            <div className="home-container">
                 <button className="home-header" onClick={handleHeaderClick}>
                     <h1>P & Q <br /> ALGORITHM <br /> VISUALIZER</h1>
                 </button>
             </div>
-            <MenuScreen slideDown={slideDown} />
+            <MenuScreen />
         </div>
     );
 }

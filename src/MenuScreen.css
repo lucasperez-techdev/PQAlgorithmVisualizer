@@ -15,18 +15,22 @@
 
 .menu-screen.show {
     transform: translateY(-100vh);
+    /* Slide up when show class is added */
 }
 
 .menu-screen h2 {
     margin: 0;
-    opacity: 0; /* Start hidden */
-    transition: opacity 2s ease; /* Set fade-in duration */
     font: bold 20px/1.5 "Roboto", sans-serif;
     line-height: 30px;
+    opacity: 0;
+    /* Hidden by default, controlled by JS */
+    transition: opacity 0.2s ease;
+    /* Smooth and responsive transition of opacity */
 }
 
 .menu-screen h2.fade-in {
-    opacity: 1; /* Show when fade-in class is added */
+    opacity: 1;
+    /* Text is visible when the fade-in class is added */
 }
 
 .menu-screen h2:first-of-type {
@@ -41,4 +45,3 @@
     right: 50px;
     text-align: right;
 }
-
