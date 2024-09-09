@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
+import MenuScreen from './MenuScreen';
 
 function Home() {
     const [slideDown, setSlideDown] = useState(false);
@@ -20,10 +21,7 @@ function Home() {
                     <h1>P & Q <br /> ALGORITHM <br /> VISUALIZER</h1>
                 </button>
             </div>
-            <div className={`second-screen ${slideDown ? 'show' : ''}`}>
-                <h2>P & Q</h2>
-                <h2>ALGORITHM <br/> VISUALIZER</h2>
-            </div>
+            <MenuScreen slideDown={slideDown} />
         </div>
     );
 }

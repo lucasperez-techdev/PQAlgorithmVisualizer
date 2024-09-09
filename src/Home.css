@@ -54,43 +54,6 @@ body {
     transform: translateY(-100vh); /* Slides the first screen up */
 }
 
-.second-screen {
-    display: flex;
-    height: 100vh;
-    background: #ffffff;
-    color: #000;
-    flex-direction: row; /* Set the direction to row to place elements side by side */
-    justify-content: space-between; /* Space elements to the left and right */
-    align-items: flex-start; /* Align elements to the top */
-    position: absolute;
-    top: 100vh;
-    width: 100%;
-    transition: transform 1s ease;
-    padding: 20px; /* Add padding for some spacing */
-}
-
-.second-screen.show {
-    transform: translateY(-100vh); /* Move second screen up as first screen moves */
-}
-
-.second-screen h2 {
-    margin: 0;
-    animation: slideInTop 2s ease-out;
-}
-
-.second-screen h2:first-of-type {
-    align-self: flex-start;
-    position: relative;
-    left: 0; /* Position "P & Q" on the top left */
-}
-
-.second-screen h2:last-of-type {
-    align-self: flex-start;
-    position: relative;
-    right: 0; /* Position "ALGORITHM VISUALIZER" on the top right */
-    text-align: right; /* Align text to the right */
-}
-
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
