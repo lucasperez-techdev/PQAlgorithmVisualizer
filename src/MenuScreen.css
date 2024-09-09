@@ -1,0 +1,44 @@
+.menu-screen {
+    display: flex;
+    height: 100vh;
+    background: #ffffff;
+    color: #000;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    transition: transform 1s ease;
+    padding: 20px;
+}
+
+.menu-screen.show {
+    transform: translateY(-100vh);
+}
+
+.menu-screen h2 {
+    margin: 0;
+    opacity: 0; /* Start hidden */
+    transition: opacity 2s ease; /* Set fade-in duration */
+    font: bold 20px/1.5 "Roboto", sans-serif;
+    line-height: 30px;
+}
+
+.menu-screen h2.fade-in {
+    opacity: 1; /* Show when fade-in class is added */
+}
+
+.menu-screen h2:first-of-type {
+    align-self: flex-start;
+    position: relative;
+    left: 0;
+}
+
+.menu-screen h2:last-of-type {
+    align-self: flex-start;
+    position: relative;
+    right: 50px;
+    text-align: right;
+}
+
