@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
 import './Home.css';
 import MenuScreen from './MenuScreen';
 
 function Home() {
-    const [slideDown, setSlideDown] = useState(false);
-
     function handleHeaderClick() {
-        setSlideDown(true);
         // Smoothly scrolls to the next section (MenuScreen)
         window.scrollTo({
             top: window.innerHeight, // Scroll to the height of the viewport
