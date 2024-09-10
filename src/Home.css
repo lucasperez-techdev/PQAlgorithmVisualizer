@@ -4,7 +4,7 @@ body {
 }
 
 .home-wrapper {
-    height: 200vh;
+    height: 300vh;
     /* Twice the viewport height to allow scrolling */
     overflow-y: auto;
     /* Allow vertical scrolling */
