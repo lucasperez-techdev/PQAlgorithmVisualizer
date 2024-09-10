@@ -51,7 +51,7 @@ function MenuScreen(props) {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [props.slideDown]);
+    }, [handleScroll, scrollDisabled, props.slideDown]);
 
     return (
         <div className={'menu-screen ' + (props.slideDown ? 'show' : '')}>
