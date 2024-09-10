@@ -6,7 +6,15 @@ function MenuScreen(props) {
     const [scrollDisabled, setScrollDisabled] = useState(false);
 
     // Function to calculate the visibility of the MenuScreen and adjust the opacity accordingly
+    function handleHeaderClick() {
+        // Smoothly scrolls to the next section (MenuScreen)
+        window.scrollTo({
+            top: window.innerHeight, // Scroll to the height of the viewport
+            behavior: 'smooth'
+        });
+    }
     function handleScroll() {
+
         if (scrollDisabled) return; // Skip scroll detection when disabled
 
         const menuScreen = document.querySelector('.menu-screen').getBoundingClientRect();
@@ -57,7 +65,13 @@ function MenuScreen(props) {
         <div className={'menu-screen ' + (props.slideDown ? 'show' : '')}>
             <h2 style={{ opacity: visibilityRatio }}>P & Q</h2>
             <h2 style={{ opacity: visibilityRatio }}>ALGORITHM <br /> VISUALIZER</h2>
+            <div className={'sorting-container ' + (props.slideDown ? 'show' : '')}>
+                <button className="sorting-header" onClick={handleHeaderClick}>
+                    <h3 style={{ opacity: visibilityRatio }}>Sorting Algorithms</h3>
+                </button>
+            </div>
         </div>
+
     );
 }
 

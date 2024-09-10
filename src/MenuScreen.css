@@ -23,6 +23,7 @@
     font: bold 20px/1.5 "Roboto", sans-serif;
     line-height: 30px;
     opacity: 0;
+    position: relative;
     /* Hidden by default, controlled by JS */
     transition: opacity 0.2s ease;
     /* Smooth and responsive transition of opacity */
@@ -31,6 +32,28 @@
 .menu-screen h2.fade-in {
     opacity: 1;
     /* Text is visible when the fade-in class is added */
+}
+
+.sorting-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+}
+
+.sorting-header h3 {
+    margin: 0px;
+    font: bold 20px/1.5 "Roboto", sans-serif;
+    top: 50%;
+    position: relative;
+    line-height: 20px;
+    padding: 30px;
+    /* Hidden by default, controlled by JS */
+    transition: opacity 0.2s ease;
+    /* Smooth and responsive transition of opacity */
 }
 
 .menu-screen h2:first-of-type {
