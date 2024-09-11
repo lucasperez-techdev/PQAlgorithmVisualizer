@@ -23,7 +23,7 @@ function App() {
         };
     }, []);
 
-    const dividers = Array.from({ length: 4 }, (_, index) => (
+    const dividers = Array.from({ length: 10 }, (_, index) => (
         <div key={index} className="divider" style={{ top: `${index * 100}vh` }}></div>
     ));
 
