@@ -1,8 +1,10 @@
 .menu-screen {
     display: flex;
     height: 90vh;
-    background: #ffffff;
-    color: #000;
+    background: linear-gradient(45deg, #8400ff, #00ffe7, #e500ff, #ff0000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #000000;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -19,17 +21,17 @@
 }
 
 .menu-screen h2 {
+    position: sticky;
+    top: 0; /* Adjust if needed based on your layout */
     margin: 0;
     font: bold 20px/1.5 "Roboto", sans-serif;
     line-height: 30px;
     opacity: 0;
-    position: relative;
-    /* Hidden by default, controlled by JS */
     transition: opacity 0.2s ease;
-    /* Smooth and responsive transition of opacity */
 }
 
 .menu-screen h2.fade-in {
+    position: sticky;
     opacity: 1;
     /* Text is visible when the fade-in class is added */
 }
@@ -57,14 +59,15 @@
 }
 
 .menu-screen h2:first-of-type {
-    align-self: flex-start;
-    position: relative;
+    position: sticky;
+    top: 20px; /* Adjust to ensure visibility */
     left: 0;
+    z-index: 10; /* Ensures it's above other elements */
 }
 
 .menu-screen h2:last-of-type {
-    align-self: flex-start;
-    position: relative;
+    position: sticky;
+    top: 20px; /* Adjust to ensure visibility */
     right: 50px;
-    text-align: right;
+    z-index: 10; /* Ensures it's above other elements */
 }

@@ -1,0 +1,30 @@
+/* StickyHeaders.css */
+.sticky-headers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    pointer-events: none; /* Allows interaction with underlying elements */
+    z-index: 1000; /* Ensures headers are always on top */
+}
+
+.sticky-header {
+    font: bold 20px/1.5 "Roboto", sans-serif;
+    transition: opacity 0.2s ease;
+}
+
+.left-header {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+}
+
+.right-header {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+

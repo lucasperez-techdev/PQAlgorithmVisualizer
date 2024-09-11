@@ -13,6 +13,7 @@ function MenuScreen(props) {
             behavior: 'smooth'
         });
     }
+
     function handleScroll() {
 
         if (scrollDisabled) return; // Skip scroll detection when disabled
@@ -27,11 +28,12 @@ function MenuScreen(props) {
         // Ensure the visibility ratio is between 0 and 1
         const ratio = Math.max(0, Math.min(visibleHeight / totalHeight, 1));
 
+
         // Update the visibility ratio (this will control the opacity)
-        setVisibilityRatio(ratio);
+            setVisibilityRatio(ratio);
     }
 
-    useEffect(() => {
+    useEffect(function () {
         // Add scroll event listener to detect how much of the MenuScreen is visible
         if (!scrollDisabled) {
             window.addEventListener('scroll', handleScroll, { passive: true });
@@ -63,8 +65,6 @@ function MenuScreen(props) {
 
     return (
         <div className={'menu-screen ' + (props.slideDown ? 'show' : '')}>
-            <h2 style={{ opacity: visibilityRatio }}>P & Q</h2>
-            <h2 style={{ opacity: visibilityRatio }}>ALGORITHM <br /> VISUALIZER</h2>
             <div className={'sorting-container ' + (props.slideDown ? 'show' : '')}>
                 <button className="sorting-header" onClick={handleHeaderClick}>
                     <h3 style={{ opacity: visibilityRatio }}>Sorting Algorithms</h3>
