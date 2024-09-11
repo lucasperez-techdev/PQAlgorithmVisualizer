@@ -1,6 +1,6 @@
 .menu-screen {
     display: flex;
-    height: 90vh;
+    height: 100vh;
     color: #000000;
     flex-direction: row;
     justify-content: space-between;
