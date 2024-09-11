@@ -1,9 +1,6 @@
 .menu-screen {
     display: flex;
     height: 90vh;
-    background: linear-gradient(45deg, #8400ff, #00ffe7, #e500ff, #ff0000);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
     color: #000000;
     flex-direction: row;
     justify-content: space-between;
@@ -14,6 +11,7 @@
     transition: transform 1s ease;
     padding: 20px;
 }
+
 
 .menu-screen.show {
     transform: translateY(-100vh);
