@@ -30,7 +30,7 @@ function MenuScreen(props) {
 
 
         // Update the visibility ratio (this will control the opacity)
-            setVisibilityRatio(ratio);
+        setVisibilityRatio(ratio);
     }
 
     useEffect(function () {
@@ -66,13 +66,12 @@ function MenuScreen(props) {
     return (
         <div className={'menu-screen ' + (props.slideDown ? 'show' : '')}>
             <div className={'sorting-container ' + (props.slideDown ? 'show' : '')}>
-                <button className="sorting-header" onClick={handleHeaderClick}>
-                    <h3 style={{ opacity: visibilityRatio }}>Sorting Algorithms</h3>
+                <button class='sorting-button ' role="button">
+                    <span class='sorting-text'>Sorting Button</span>
                 </button>
             </div>
         </div>
 
     );
 }
-
 export default MenuScreen;
