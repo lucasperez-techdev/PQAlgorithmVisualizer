@@ -41,5 +41,41 @@
 }
 
 
+/* sorting button syntax*/
+.sorting-button {
+    background: hsl(320, 2%, 26%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
 
+.sorting-text {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(0, 0%, 10%);
+    color: white;
+    transform: translateY(-6px);
+    will-change: transform;
+    transition: transform 250ms;
 
+}
+
+.sorting-button:hover .sorting-text {
+    transform: translateY(-8px);
+}
+
+.sorting-button:active .sorting-text {
+    transform: translateY(-4px);
+}
+
+.sorting-button:active .sorting-text {
+    transform: translateY(-4px);
+}
+
+.sorting-button:focus:not(:focus-visible) {
+    outline: none;
+}
