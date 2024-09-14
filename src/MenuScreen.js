@@ -67,11 +67,22 @@ function MenuScreen(props) {
         <div className={'menu-screen ' + (props.slideDown ? 'show' : '')}>
             <div className={'sorting-container ' + (props.slideDown ? 'show' : '')}>
                 <button class='sorting-button ' role="button">
-                    <span class='sorting-text'>Sorting Button</span>
+                    <span class='sorting-text'>Sorting Algorithms</span>
+                </button>
+            </div>
+            <div className={'searching-container' + (props.slideDown ? 'show' : '')}>
+                <button className='searching-button ' role="button">
+                    <span className='searching-text'>Searching Algorithms</span>
+                </button>
+            </div>
+            <div className={'other-container' + (props.slideDown ? 'show' : '')}>
+                <button className='other-button ' role="button">
+                    <span className='other-text'>Other Algorithms</span>
                 </button>
             </div>
         </div>
 
     );
 }
+
 export default MenuScreen;
