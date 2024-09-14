@@ -28,18 +28,6 @@
     bottom: 20%;
 }
 
-.sorting-header h3 {
-    margin: 0px;
-    font: bold 20px/1.5 "Roboto", sans-serif;
-    top: 50%;
-    position: relative;
-    line-height: 20px;
-    padding: 30px;
-    /* Hidden by default, controlled by JS */
-    transition: opacity 0.2s ease;
-    /* Smooth and responsive transition of opacity */
-}
-
 
 /* sorting button syntax*/
 .sorting-button {
@@ -77,5 +65,102 @@
 }
 
 .sorting-button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.searching-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    bottom: 20%;
+}
+
+.searching-button {
+    background: hsl(320, 2%, 26%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.searching-text {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(0, 0%, 10%);
+    color: white;
+    transform: translateY(-6px);
+    will-change: transform;
+    transition: transform 250ms;
+
+}
+
+.searching-button:hover .searching-text {
+    transform: translateY(-8px);
+}
+
+.searching-button:active .searching-text {
+    transform: translateY(-4px);
+}
+
+.searching-button:active .searching-text {
+    transform: translateY(-4px);
+}
+
+.searching-button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.other-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: absolute;
+    right: 10%;
+    bottom: 20%;
+}
+
+.other-button {
+    background: hsl(320, 2%, 26%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.other-text {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(0, 0%, 10%);
+    color: white;
+    transform: translateY(-6px);
+    will-change: transform;
+    transition: transform 250ms;
+
+}
+
+.other-button:hover .other-text {
+    transform: translateY(-8px);
+}
+
+.other-button:active .other-text {
+    transform: translateY(-4px);
+}
+
+.other-button:active .other-text {
+    transform: translateY(-4px);
+}
+
+.other-button:focus:not(:focus-visible) {
     outline: none;
 }
