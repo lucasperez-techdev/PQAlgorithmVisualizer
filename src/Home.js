@@ -17,7 +17,6 @@ function Home() {
                     <h1>P & Q <br /> ALGORITHM <br /> VISUALIZER</h1>
                 </button>
             </div>
-            <MenuScreen />
         </div>
     );
 }

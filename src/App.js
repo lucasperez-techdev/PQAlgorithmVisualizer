@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Home from './Home';
 import StickyHeaders from "./StickyHeaders";
+import MenuScreen from "./MenuScreen";
+import SortingAlgs from "./SortingAlgs";
+import SearchingAlgs from "./SearchingAlgs";
 
 function App() {
     useEffect(() => {
@@ -32,6 +35,9 @@ function App() {
         <div className="app-container">
             <StickyHeaders />
             <Home />
+            <MenuScreen />
+            <SortingAlgs />
+            <SearchingAlgs />
             {dividers}
             {/* Add more screens here as needed */}
         </div>

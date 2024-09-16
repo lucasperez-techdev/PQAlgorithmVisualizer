@@ -6,14 +6,6 @@ function MenuScreen(props) {
     const [scrollDisabled, setScrollDisabled] = useState(false);
 
     // Function to calculate the visibility of the MenuScreen and adjust the opacity accordingly
-    function handleHeaderClick() {
-        // Smoothly scrolls to the next section (MenuScreen)
-        window.scrollTo({
-            top: window.innerHeight, // Scroll to the height of the viewport
-            behavior: 'smooth'
-        });
-    }
-
     function handleScroll() {
 
         if (scrollDisabled) return; // Skip scroll detection when disabled
