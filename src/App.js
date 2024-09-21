@@ -6,22 +6,32 @@ import MenuScreen from "./MenuScreen";
 import SortingAlgs from "./SortingAlgs";
 import SearchingAlgs from "./SearchingAlgs";
 import OtherAlgs from "./OtherAlgs";
+import BubbleSort from "./BubbleSort";
+import InsertionSort from "./InsertionSort";
+import MergeSort from "./MergeSort";
+import QuickSort from "./QuickSort";
+import HeapSort from "./HeapSort";
 
 function App() {
-    // Create refs for both sections
+    // Create refs for sections
     const sortingAlgsRef = useRef(null);
     const searchingAlgsRef = useRef(null);
     const otherAlgsRef = useRef(null);
 
+    // Create refs for sorting algorithm components
+    const bubbleSortRef = useRef(null);
+    const insertionSortRef = useRef(null);
+    const mergeSortRef = useRef(null);
+    const quickSortRef = useRef(null);
+    const heapSortRef = useRef(null);
 
-    // Function to scroll to SortingAlgs section
+    // Function to scroll to sections
     const scrollToSortingAlgs = () => {
         if (sortingAlgsRef.current) {
             sortingAlgsRef.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
-    // Function to scroll to SearchingAlgs section
     const scrollToSearchingAlgs = () => {
         if (searchingAlgsRef.current) {
             searchingAlgsRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -34,20 +44,46 @@ function App() {
         }
     };
 
+    // Functions to scroll to sorting algorithm components
+    const scrollToBubbleSort = () => {
+        if (bubbleSortRef.current) {
+            bubbleSortRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const scrollToInsertionSort = () => {
+        if (insertionSortRef.current) {
+            insertionSortRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const scrollToMergeSort = () => {
+        if (mergeSortRef.current) {
+            mergeSortRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const scrollToQuickSort = () => {
+        if (quickSortRef.current) {
+            quickSortRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const scrollToHeapSort = () => {
+        if (heapSortRef.current) {
+            heapSortRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     useEffect(() => {
         const handleScroll = () => {
-            // Get the scroll position of the document
             const scrollPosition = window.scrollY;
             const appContainer = document.querySelector('.app-container');
-
-            // Dynamically adjust the gradient background position based on scroll
             appContainer.style.backgroundPosition = `0% ${scrollPosition / 2}%`;
         };
 
-        // Add the scroll event listener
         window.addEventListener('scroll', handleScroll);
 
-        // Cleanup event listener on component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -61,14 +97,19 @@ function App() {
         <div className="app-container">
             <StickyHeaders />
             <Home />
-            {/* Pass both scroll functions to MenuScreen */}
             <MenuScreen
                 scrollToSortingAlgs={scrollToSortingAlgs}
                 scrollToSearchingAlgs={scrollToSearchingAlgs}
                 scrollToOtherAlgs={scrollToOtherAlgs}
             />
             <div ref={sortingAlgsRef}>
-                <SortingAlgs />
+                <SortingAlgs
+                    scrollToBubbleSort={scrollToBubbleSort}
+                    scrollToInsertionSort={scrollToInsertionSort}
+                    scrollToMergeSort={scrollToMergeSort}
+                    scrollToQuickSort={scrollToQuickSort}
+                    scrollToHeapSort={scrollToHeapSort}
+                />
             </div>
             <div ref={searchingAlgsRef}>
                 <SearchingAlgs />
@@ -76,8 +117,22 @@ function App() {
             <div ref={otherAlgsRef}>
                 <OtherAlgs />
             </div>
+            <div ref={insertionSortRef}>
+                <InsertionSort />
+            </div>
+            <div ref={heapSortRef}>
+                <HeapSort />
+            </div>
+            <div ref={quickSortRef}>
+                <QuickSort />
+            </div>
+            <div ref={mergeSortRef}>
+                <MergeSort />
+            </div>
+            <div ref={bubbleSortRef}>
+                <BubbleSort />
+            </div>
             {dividers}
-            {/* Add more screens here as needed */}
         </div>
     );
 }
