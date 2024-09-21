@@ -1,13 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './MenuScreen.css';
 
 function MenuScreen(props) {
     const [visibilityRatio, setVisibilityRatio] = useState(0);
     const [scrollDisabled, setScrollDisabled] = useState(false);
 
+
+
+    // Function to smoothly scroll to a section
+
+    // Scroll handlers for each button
+    function handleSortingClick() {
+        if (props.scrollToSortingAlgs) {
+            props.scrollToSortingAlgs();
+        }
+    }
+
+    function handleSearchingClick() {
+        if (props.scrollToSearchingAlgs) {
+            props.scrollToSearchingAlgs();
+        }
+    }
+
+    function handleOtherClick() {
+        if (props.scrollToOtherAlgs) {
+            props.scrollToOtherAlgs();
+        }
+    }
+
+
     // Function to calculate the visibility of the MenuScreen and adjust the opacity accordingly
     function handleScroll() {
-
         if (scrollDisabled) return; // Skip scroll detection when disabled
 
         const menuScreen = document.querySelector('.menu-screen').getBoundingClientRect();
@@ -19,7 +42,6 @@ function MenuScreen(props) {
 
         // Ensure the visibility ratio is between 0 and 1
         const ratio = Math.max(0, Math.min(visibleHeight / totalHeight, 1));
-
 
         // Update the visibility ratio (this will control the opacity)
         setVisibilityRatio(ratio);
@@ -58,22 +80,21 @@ function MenuScreen(props) {
     return (
         <div className={'menu-screen ' + (props.slideDown ? 'show' : '')}>
             <div className={'sorting-container ' + (props.slideDown ? 'show' : '')}>
-                <button class='sorting-button ' role="button">
-                    <span class='sorting-text'>Sorting Algorithms</span>
+                <button className='sorting-button' onClick={handleSortingClick}>
+                    <span className='sorting-text'>Sorting Algorithms</span>
                 </button>
             </div>
-            <div className={'searching-container' + (props.slideDown ? 'show' : '')}>
-                <button className='searching-button ' role="button">
+            <div className={'searching-container ' + (props.slideDown ? 'show' : '')}>
+                <button className='searching-button' onClick={handleSearchingClick}>
                     <span className='searching-text'>Searching Algorithms</span>
                 </button>
             </div>
-            <div className={'other-container' + (props.slideDown ? 'show' : '')}>
-                <button className='other-button ' role="button">
+            <div className={'other-container ' + (props.slideDown ? 'show' : '')}>
+                <button className='other-button' onClick={handleOtherClick}>
                     <span className='other-text'>Other Algorithms</span>
                 </button>
             </div>
         </div>
-
     );
 }
 

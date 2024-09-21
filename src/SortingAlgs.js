@@ -5,7 +5,7 @@ function SortingAlgs(props) {
 
     return (
         <div className={'sorting-screen ' + (props.slideDown ? 'show' : '')}>
-            <h1>Hello World!</h1>
+            <h1>Hello World</h1>
         </div>
 
     )
