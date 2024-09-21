@@ -5,7 +5,7 @@ function SearchingAlgs(props) {
 
     return (
         <div className={'searching-screen ' + (props.slideDown ? 'show' : '')}>
-            <h1>Hello World!</h1>
+            <h1>Hello World And Poop!</h1>
         </div>
 
     )
