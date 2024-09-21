@@ -1,0 +1,17 @@
+/* HeapSort.css */
+
+.heapSort-screen {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Center content if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heapSort-screen h1 {
+    margin: 0;
+    padding: 20px;
+    font-size: 2.5rem;
+}

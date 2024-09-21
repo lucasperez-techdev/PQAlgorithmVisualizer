@@ -1,10 +1,116 @@
+/* General styling */
 .sorting-screen {
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    color: #000000;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
     width: 100%;
-    transition: transform 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Carousel buttons */
+.carousel-button {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+}
+
+.carousel-button.left {
+    left: 200px;
+}
+
+.carousel-button.right {
+    right: 200px;
+}
+
+/* Polaroid container */
+.polaroid-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Polaroid card styles */
+.polaroid {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    border: 10px solid rgb(0, 0, 0);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.polaroid:hover {
+    transform: scale(1.05) translateY(-10px); /* Slightly enlarge and move up on hover */
+}
+
+.polaroid-content {
+    text-align: center;
+}
+
+.polaroid h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.polaroid p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Positioning based on pile */
+.polaroid.center {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+}
+
+.polaroid.left {
+    transform: translateX(-125%) scale(0.8) rotate(-5deg);
+    opacity: 0.8;
+}
+
+.polaroid.right {
+    transform: translateX(125%) scale(0.8) rotate(5deg);
+    opacity: 0.8;
+}
+
+/* Shuffle animations */
+.polaroid.shuffle {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+.polaroid.left.shuffle {
+    animation-name: shuffleLeftToCenter;
+}
+
+.polaroid.right.shuffle {
+    animation-name: shuffleRightToCenter;
+}
+
+@keyframes shuffleLeftToCenter {
+    from {
+        transform: translateX(-150%) rotate(-5deg) scale(0.7);
+    }
+    to {
+        transform: translateX(0) rotate(0deg) scale(1);
+    }
+}
+
+@keyframes shuffleRightToCenter {
+    from {
+        transform: translateX(150%) rotate(5deg) scale(0.7);
+    }
+    to {
+        transform: translateX(0) rotate(0deg) scale(1);
+    }
 }
