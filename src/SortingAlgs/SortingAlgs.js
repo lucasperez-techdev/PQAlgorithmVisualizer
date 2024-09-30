@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './SortingAlgs.css';
 
 const algorithms = [
-    { name: "Bubble Sort", description: "A simple comparison-based sorting algorithm." },
-    { name: "Merge Sort", description: "An efficient, stable, divide-and-conquer sorting algorithm." },
-    { name: "Quick Sort", description: "A divide-and-conquer algorithm, which is faster on average." },
-    { name: "Heap Sort", description: "A comparison-based sorting algorithm using a binary heap." },
-    { name: "Insertion Sort", description: "A simple sorting algorithm that builds the final sorted array one item at a time." },
+    { name: "Bubble Sort", description: "Repeatedly compares and swaps adjacent elements until the list is sorted." },
+    { name: "Merge Sort", description: "Recursively splits the list, sorts each part, and merges them back together." },
+    { name: "Quick Sort", description: "Selects a pivot, partitions the list, and sorts the partitions recursively." },
+    { name: "Heap Sort", description: "Builds a heap, repeatedly extracts the max/min, and rebuilds until sorted." },
+    { name: "Insertion Sort", description: "Inserts each element into its correct position in the sorted portion of the list." },
 ];
 
 function SortingAlgs(props) {
@@ -28,10 +28,19 @@ function SortingAlgs(props) {
 
     const moveCard = (direction) => {
         if (cards.some(card => card.pile === 'center')) {
-            const newCards = [...cards];
+            let newCards = [...cards];
             for (let i = newCards.length - 1; i >= 0; i--) {
                 if (newCards[i].pile === 'center') {
+                    // Step 1: Change the card's pile to trigger the animation
                     newCards[i] = { ...newCards[i], pile: direction };
+
+                    // Step 2: Set a timeout to rearrange the cards after the animation completes
+                    setTimeout(() => {
+                        let finalCards = [...newCards];
+                        const movedCard = finalCards.splice(i, 1)[0]; // Remove the card
+                        finalCards.push(movedCard); // Move it to the front (or end) after animation
+                        setCards(finalCards); // Update the state after the animation
+                    }, 300); // Adjust the timeout to match your animation duration
                     break;
                 }
             }
@@ -40,6 +49,8 @@ function SortingAlgs(props) {
             shuffleBackToCenter();
         }
     };
+
+
 
     const shuffleBackToCenter = () => {
         // Separate cards into left and right piles
@@ -106,7 +117,6 @@ function SortingAlgs(props) {
     return (
         <div className="sorting-screen">
             <button className="carousel-button left" onClick={() => moveCard('left')}>
-                &lt;
             </button>
 
             <div className="polaroid-container">
@@ -129,7 +139,6 @@ function SortingAlgs(props) {
             </div>
 
             <button className="carousel-button right" onClick={() => moveCard('right')}>
-                &gt;
             </button>
         </div>
     );

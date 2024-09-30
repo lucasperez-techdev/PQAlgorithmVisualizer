@@ -16,9 +16,9 @@
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    border-left: 36px solid transparent;
-    border-right: 36px solid transparent;
-    border-bottom: 8px solid #000000; /* Change color as needed /* Arrow size */
+    border-left: 34px solid transparent;
+    border-right: 34px solid transparent;
+    border-bottom: 7px solid #000000; /* Change color as needed /* Arrow size */
     /* Arrow pointing up */
 }
 
@@ -28,7 +28,7 @@
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    border-left: 70px solid transparent;
+    border-left: 62px solid transparent;
     border-right: 70px solid transparent;
     border-bottom: 8px solid #000000; /* Change color as needed /* Arrow size */
     /* Arrow pointing up */
