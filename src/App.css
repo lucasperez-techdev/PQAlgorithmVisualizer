@@ -53,3 +53,25 @@ body {
     z-index: 10; /* Ensure it appears above content */
 }
 
+/* Hide scrollbar track */
+::-webkit-scrollbar-track {
+    background: transparent; /* This hides the track */
+}
+
+/* Chrome - Hides track and width/height set for vertical/horizontal scrollbars */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+/* Chrome - Changes thumb color and rounds scrollbar edges */
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 46%, 0.5);
+    border-radius: 8px;
+}
+
+/* Thumb hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #656565; /* Darker color on hover */
+}
+
