@@ -1,17 +1,104 @@
-/* HeapSort.css */
-
 .heapSort-screen {
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    /* Center content if needed */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .heapSort-screen h1 {
-    margin: 0;
-    padding: 20px;
+    margin-bottom: 20px;
+    color: #000000;
     font-size: 2.5rem;
+    text-align: center;
+    font-weight: 300;
+    /* Thinner font */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.array-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px 0;
+    width: 80%;
+}
+
+.array-bar {
+    width: 40px;
+    margin: 0 5px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: height 0.3s ease;
+    border: 2px solid #333;
+    /* Add border to the bars */
+    font-weight: 150;
+    /* Thinner font for the numbers */
+    text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.8);
+    /* Add white stroke to the numbers */
+}
+
+.array-bar.sorted {
+    background-color: #7ed321;
+    border: 2px solid #2b7d19;
+    /* Border for sorted bars */
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    font-weight: 300;
+    /* Thinner font */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.slider-container label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.slider-container input {
+    width: 50%;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 300;
+    /* Thinner font */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.buttons button:hover {
+    background-color: #357ab8;
+}
+
+.buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
