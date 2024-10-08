@@ -39,9 +39,21 @@
     text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.8);  /* Add white stroke to the numbers */
 }
 
+.array-bar.swapping {
+    background-color: red;
+}
+
 .array-bar.sorted {
     background-color: #7ed321;
-    border: 2px solid #2b7d19;  /* Border for sorted bars */
+    border: 2px solid #2b7d19;
+}
+
+.array-bar.key {
+    background-color: red;
+}
+
+.array-bar.shifted {
+    background-color: orange;
 }
 
 .controls {
