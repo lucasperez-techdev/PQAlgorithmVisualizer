@@ -108,3 +108,20 @@
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+.array-bar {
+    transition: height 0.3s ease;
+    text-align: center;
+}
+
+.array-bar.key {
+    background-color: red;
+}
+
+.array-bar.shifted {
+    background-color: orange;
+}
+
+.array-bar.sorted {
+    background-color: green;
+}
