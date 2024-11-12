@@ -2,16 +2,105 @@
 
 .quickSort-screen {
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    /* Center content if needed */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Light background for better contrast */
 }
 
 .quickSort-screen h1 {
-    margin: 0;
-    padding: 20px;
+    margin-bottom: 20px;
+    color: #333333;
     font-size: 2.5rem;
+    text-align: center;
+    font-weight: 300; /* Thinner font */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.array-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px 0;
+    width: 80%;
+    height: 60vh;
+    padding: 10px;
+}
+
+.array-bar {
+    width: 30px;
+    border: 1px solid #333;
+    margin: 0 2px;
+    background-color: #4a90e2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.array-bar.pivot {
+    background-color: #d0021b; /* Red for pivot */
+}
+
+.array-bar.comparing {
+    background-color: #f8e71c; /* Yellow for comparing */
+}
+
+.array-bar.swapping {
+    background-color: #50e3c2; /* Teal for swapping */
+}
+
+.array-bar.sorted {
+    background-color: #7ed321; /* Green for sorted */
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.slider-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.slider-container label {
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+.slider-container input {
+    width: 60%;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 300; /* Thinner font */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.buttons button:hover {
+    background-color: #357ab8;
+}
+
+.buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
