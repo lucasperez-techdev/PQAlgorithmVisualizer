@@ -1,52 +1,63 @@
+/* HeapSort.css */
+
 .heapSort-screen {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .heapSort-screen h1 {
-    margin-bottom: 20px;
     color: #000000;
     font-size: 2.5rem;
     text-align: center;
-    font-weight: 300;
-    /* Thinner font */
+    font-weight: 400;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-.array-container {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    margin: 20px 0;
-    width: 80%;
+.heap-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden; /* Prevent overflow */
 }
 
-.array-bar {
-    width: 40px;
-    margin: 0 5px;
+.heap-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.heap-node {
+    position: absolute;
     background-color: #4a90e2;
     color: #ffffff;
-    text-align: center;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    transition: height 0.3s ease;
     border: 2px solid #333;
-    /* Add border to the bars */
-    font-weight: 150;
-    /* Thinner font for the numbers */
-    text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.8);
-    /* Add white stroke to the numbers */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: default;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
 }
 
-.array-bar.sorted {
+.heap-node.sorted {
     background-color: #7ed321;
     border: 2px solid #2b7d19;
-    /* Border for sorted bars */
+}
+
+.heap-node.active {
+    background-color: #f5a623;
+    transform: scale(1.2);
 }
 
 .controls {
@@ -63,8 +74,6 @@
     justify-content: center;
     width: 80%;
     font-weight: 300;
-    /* Thinner font */
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .slider-container label {
@@ -77,12 +86,11 @@
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .buttons button {
     margin: 0 10px;
-    padding: 10px 20px;
     background-color: #4a90e2;
     color: white;
     border: none;
@@ -90,8 +98,6 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: 300;
-    /* Thinner font */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .buttons button:hover {

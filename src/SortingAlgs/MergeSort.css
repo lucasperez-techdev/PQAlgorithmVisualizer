@@ -2,16 +2,134 @@
 
 .mergeSort-screen {
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    /* Center content if needed */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .mergeSort-screen h1 {
-    margin: 0;
-    padding: 20px;
+    margin-bottom: 20px;
+    color: #000000;
     font-size: 2.5rem;
+    text-align: center;
+    font-weight: 400; /* Normal font weight */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.array-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px 0;
+    width: 80%;
+    max-width: 1000px;
+    height: 60vh;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.array-bar {
+    width: 20px;
+    margin: 0 2px;
+    background-color: #4a90e2;
+    transition: height 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+/* Highlight during comparison */
+.array-bar.comparing {
+    background-color: #FF4136; /* Red */
+}
+
+/* Highlight after merging */
+.array-bar.merged {
+    background-color: #7ed321; /* Green */
+}
+
+/* Highlight during branching */
+.array-bar.branch {
+    background-color: #f5a623; /* Orange */
+}
+
+/* Default state */
+.array-bar.default {
+    background-color: #4a90e2; /* Blue */
+}
+
+/* Optional: Display value on hover */
+.array-bar:hover::after {
+    content: attr(data-value);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #000;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Controls Styling */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.slider-container label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.slider-container input {
+    width: 60%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: 400; /* Normal font weight */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:hover:not(:disabled) {
+    background-color: #357ab8;
+}
+
+.buttons button:disabled {
+    background-color: #b3e5fc;
+    cursor: not-allowed;
 }
